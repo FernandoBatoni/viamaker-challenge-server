@@ -1,0 +1,35 @@
+{
+  // --------- AUTO ESLINT ---------
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll": true
+    },
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll": true
+    },
+    // --------- AUTO ESLINT ---------
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.preferences.importModuleSpecifier": "non-relative"
+  },
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#f68357",
+    "statusBar.background": "#f60078",
+    "statusBar.foreground": "#fff",
+    "statusBarItem.hoverBackground": "#db450c",
+    "statusBarItem.remoteBackground": "#f60078",
+    "statusBarItem.remoteForeground": "#fff",
+    "titleBar.activeBackground": "#f60078",
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveBackground": "#f6007899",
+    "titleBar.inactiveForeground": "#ffffff"
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+}

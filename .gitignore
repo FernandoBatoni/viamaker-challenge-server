@@ -1,0 +1,24 @@
+node_modules
+build
+build/*
+build/
+node_modules/
+_requests/
+source/http
+source/config/_localVars.js
+source/config/_productionVars.ts
+source/config/_*.ts
+source/config/_localVars.ts
+source/config/_procedureVars.js
+source/config/_procedureVars.ts
+source/config/_registers.js
+source/config/_registers.ts
+prettier.config.js
+.env
+#tool-versions is for asdf version manager
+.tool-versions
+
+source/csv/*
+.DS_Store
+files/*
+.tool-versions
