@@ -1,19 +1,19 @@
-import { type Response, Router } from 'express'
+import { type Request, type Response, Router } from 'express'
 
-import ListVideosBusiness from '../business/videos/ListVideosBusiness'
+import ListProductBusiness from '../business/products/ListProductBusiness'
 import { CustomErrorResponse } from '../helpers/errors'
 
-const VideoController = Router()
+const ProductController = Router()
 
 //* [GET ALL]
-VideoController.get('', async (response: Response) => {
+ProductController.get('', async (request: Request, response: Response) => {
   try {
-    const videos = await ListVideosBusiness.execute()
+    const products = await ListProductBusiness.execute()
 
-    response.send_ok('Videos encontrados com sucesso', { videos })
+    response.send_ok('Produtos encontrados com sucesso', products)
   } catch (error) {
     return CustomErrorResponse(response, error)
   }
 })
 
-export default VideoController
+export default ProductController
