@@ -7,7 +7,6 @@ _requests/
 source/http
 source/config/_localVars.js
 source/config/_productionVars.ts
-source/config/_*.ts
 source/config/_localVars.ts
 source/config/_procedureVars.js
 source/config/_procedureVars.ts

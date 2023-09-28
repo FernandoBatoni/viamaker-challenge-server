@@ -31,5 +31,5 @@
     "titleBar.inactiveBackground": "#f6007899",
     "titleBar.inactiveForeground": "#ffffff"
   },
-  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
 }
