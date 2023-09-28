@@ -3,7 +3,7 @@ import VideoQueries from '../../queries/VideoQueries'
 
 class ListVideoBusiness {
   async execute () {
-    const videos = await VideoQueries.find({})
+    const videos = await VideoQueries.find()
     if (!videos) throw new CustomError('Videos não encontrados!', 400)
 
     return videos
