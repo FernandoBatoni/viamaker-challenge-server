@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "ViaMaker Web - Back End Server",
   "main": "build/server.js",
-  "repository": "git@github.com:FernandoBatoni/",
   "author": "Fernando Batoni <nandobatoni22@gmail.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "dev": "tsnd --respawn --transpile-only --poll --no-notify --watch locales source/server.ts",
     "build": "tsc && sucrase ./source -d ./build --transforms typescript,imports",
