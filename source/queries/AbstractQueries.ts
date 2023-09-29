@@ -1,9 +1,8 @@
 import type mongoose from 'mongoose'
-import { type Query, type UpdateWriteOpResult } from 'mongoose'
 
 import is from '../helpers/is'
 import type IQueries from '../interfaces/IQueries'
-import { type ICreateParams, type IDeleteOneParams, type IFindByIdParams, type IUpdateOneParams } from '../interfaces/IQueries'
+import { type ICreateParams, type IDeleteOneParams, type IFindByIdAndUpdateParams, type IFindByIdParams, type IFindOneParams, type IFindParams } from '../interfaces/IQueries'
 
 export default abstract class AbstractQueries<IModelDocument, IModelSchema> implements IQueries<IModelDocument, IModelSchema> {
   public readonly model: mongoose.Model<any> & { aggregatePaginate?: any }
@@ -21,10 +20,24 @@ export default abstract class AbstractQueries<IModelDocument, IModelSchema> impl
     return await this.model.create([properties], options)
   }
 
-  async find (): Promise<Array<IModelDocument>> {
-    const documents = await this.model.find()
+  async find ({
+    match,
+    options,
+    project = {}
+  }: IFindParams<IModelSchema>): Promise<Array<IModelDocument>> {
+    const documents = await this.model.find(match, project, options)
 
     return documents
+  }
+
+  async findOne ({
+    match,
+    options,
+    project = {}
+  }: IFindOneParams<IModelSchema>): Promise<IModelDocument> {
+    const document = await this.model.findOne(match, project, options)
+
+    return document
   }
 
   async findById ({
@@ -37,14 +50,15 @@ export default abstract class AbstractQueries<IModelDocument, IModelSchema> impl
     return document
   }
 
-  async updateOne ({
-    match,
+  async findByIdAndUpdate ({
+    id,
     update,
-    options
-  }: IUpdateOneParams<IModelSchema>): Promise<Query<UpdateWriteOpResult, IModelSchema>> {
-    const updateInfo = await this.model.updateOne(match, update, options)
+    options,
+    project = {}
+  }: IFindByIdAndUpdateParams<IModelSchema>): Promise<IModelDocument> {
+    const document = await this.model.findOneAndUpdate({ _id: id }, update, options).select(project)
 
-    return updateInfo
+    return document
   }
 
   async deleteOne ({

@@ -9,7 +9,7 @@ const router = express.Router()
 app.use('/', router)
 
 router.use('/videos', controllers.VideosController)
-router.use('/products', controllers.ProductsController)
-router.use('/users', controllers.UserController)
+router.use('/produtos', controllers.ProductsController)
+router.use('/usuarios', controllers.UserController)
 
 export default app

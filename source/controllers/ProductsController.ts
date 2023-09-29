@@ -1,12 +1,12 @@
 import { type Request, type Response, Router } from 'express'
 
-import ListProductBusiness from '../business/products/ListProductBusiness'
+import ListProductBusiness from '../business/Products/ListProductBusiness'
 import { CustomErrorResponse } from '../helpers/errors'
 
 const ProductController = Router()
 
 //* [GET ALL]
-ProductController.get('', async (request: Request, response: Response) => {
+ProductController.get('', async (_: Request, response: Response) => {
   try {
     const products = await ListProductBusiness.execute()
 

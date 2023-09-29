@@ -1,5 +1,4 @@
 import type mongoose from 'mongoose'
-import { type Query, type UpdateWriteOpResult } from 'mongoose'
 
 export interface IAllQueriesParams {
   department?: string
@@ -11,10 +10,29 @@ export interface ICreateParams<T = any> {
   options?: mongoose.SaveOptions
 }
 
+export interface IFindParams<T> extends IAllQueriesParams {
+  match?: mongoose.FilterQuery<T>
+  project?: any
+  options?: mongoose.QueryOptions
+}
+
+export interface IFindByIdAndUpdateParams<T> extends IAllQueriesParams {
+  id: mongoose.Types.ObjectId | string
+  update: mongoose.UpdateWithAggregationPipeline | mongoose.UpdateQuery<T>
+  project?: Record<string, object | object>
+  options?: mongoose.QueryOptions
+}
+
 export interface IFindByIdParams extends IAllQueriesParams {
   id: mongoose.Types.ObjectId | string
   options?: mongoose.QueryOptions
   project?: any
+}
+
+export interface IFindOneParams<T> extends IAllQueriesParams {
+  match: mongoose.FilterQuery<T>
+  project?: any
+  options?: mongoose.QueryOptions
 }
 
 export interface IUpdateOneParams<T> extends IAllQueriesParams {
@@ -40,10 +58,12 @@ export default interface IQueries<IModelDocument, IModelSchema> {
 
   // Read
   findById: (params: IFindByIdParams) => Promise<IModelDocument>
+  findOne: (params: IFindOneParams<IModelSchema>) => Promise<IModelDocument>
   find: (params: IFindParams<IModelSchema>) => Promise<Array<IModelDocument>>
 
   // Update
-  updateOne: (params: IUpdateOneParams<IModelSchema>) => Promise<Query<UpdateWriteOpResult, IModelSchema>>
+  findByIdAndUpdate: (params: IFindByIdAndUpdateParams<IModelSchema>) => Promise<IModelDocument>
+
   // Delete
   deleteOne: (params: IDeleteOneParams<IModelSchema>) => Promise<{ ok?: number, n?: number, deletedCount?: number }>
 }
