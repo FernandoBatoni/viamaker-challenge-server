@@ -1,7 +1,5 @@
 import dotenv from 'dotenv'
 
-import { _localVars } from './_localVars'
-
 dotenv.config()
 const variables = {
   //* Environment
@@ -16,4 +14,4 @@ const variables = {
   DATABASE_CUSTERNAME: process.env.DATABASE_CUSTERNAME
 }
 
-export default !process.env.PORT ? _localVars : variables
+export default variables
