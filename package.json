@@ -1,7 +1,7 @@
 {
   "name": "viamaker-challenge-back-end",
   "version": "1.0.0",
-  "description": "GMI Web - Back End Server",
+  "description": "ViaMaker Web - Back End Server",
   "main": "build/server.js",
   "repository": "git@github.com:FernandoBatoni/",
   "author": "Fernando Batoni <nandobatoni22@gmail.com>",
