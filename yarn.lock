@@ -961,10 +961,10 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/request-promise@^4.1.47":
-  version "4.1.48"
-  resolved "https://registry.yarnpkg.com/@types/request-promise/-/request-promise-4.1.48.tgz#46f4225a58cefaa342c87fe5f2efb8ad3cb2c2e3"
-  integrity sha512-sLsfxfwP5G3E3U64QXxKwA6ctsxZ7uKyl4I28pMj3JvV+ztWECRns73GL71KMOOJME5u1A5Vs5dkBqyiR1Zcnw==
+"@types/request-promise@^4.1.50":
+  version "4.1.50"
+  resolved "https://registry.yarnpkg.com/@types/request-promise/-/request-promise-4.1.50.tgz#746257cc6cf546d28ea8f0df517a7029545ca49f"
+  integrity sha512-pW52uoS7pTwKz+vHCnG9R0QbwVR9HkqyppEabcQxeBM6QjdCvTcW9ABJWznLetPyYOmbrtRPCzf/5itf/a2Rug==
   dependencies:
     "@types/bluebird" "*"
     "@types/request" "*"
